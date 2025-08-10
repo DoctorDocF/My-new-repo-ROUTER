@@ -1,0 +1,12 @@
+[build]
+  functions = "netlify/functions"
+  
+[[redirects]]
+  from = "/login"
+  to = "/.netlify/functions/api/login"
+  status = 200
+
+[[redirects]]
+  from = "/deg/*"
+  to = "/.netlify/functions/api/deg/:splat"
+  status = 200
