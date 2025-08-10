@@ -6,7 +6,7 @@ exports.handler = async (event) => {
   if (path === '/.netlify/functions/api/login' && method === 'GET') {
     return {
       statusCode: 200,
-      body: 'efv', // Ваш логин
+      body: "efv", // Ваш логин
     };
   }
 
