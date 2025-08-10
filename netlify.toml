@@ -1,12 +1,33 @@
 [build]
   functions = "netlify/functions"
-  
+
+# Основные маршруты API
 [[redirects]]
   from = "/login"
   to = "/.netlify/functions/api/login"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/login/"
+  to = "/.netlify/functions/api/login"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/deg/*"
   to = "/.netlify/functions/api/deg/:splat"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/deg/*/"
+  to = "/.netlify/functions/api/deg/:splat"
+  status = 200
+  force = true
+
+# Обработка ошибок (опционально)
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/api/not-found"
+  status = 404
